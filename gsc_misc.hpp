@@ -5,5 +5,6 @@
 #include "../gsc.hpp"
 
 void gsc_getgroundentity(scr_entref_t id);
+void gsc_jump_clearstate_extended(scr_entref_t id);
 
 #endif

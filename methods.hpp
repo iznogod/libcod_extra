@@ -6,3 +6,5 @@
 {"saveload_getgroundentity", gsc_saveload_getgroundentity, 0},
 
 {"getgroundentity", gsc_getgroundentity, 0},
+
+{"jump_clearstate_extended", gsc_jump_clearstate_extended, 0},

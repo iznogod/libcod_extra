@@ -10,3 +10,11 @@ void gsc_getgroundentity(scr_entref_t id)
 	}
 	stackPushUndefined();
 }
+
+void gsc_jump_clearstate_extended(scr_entref_t id)
+{
+	playerState_t *ps = SV_GameClientNum(id);
+	ps->pm_flags &= 0xFFF7FFFF;
+	ps->pm_time = 0;
+	ps->jumpTime = 0; //to reset wallspeed effects
+}
