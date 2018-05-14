@@ -6,6 +6,7 @@ struct jh_save
 	vec3_t origin;
 	vec3_t angles;
 	gentity_t *groundentity;
+	int nadejumps;
 };
 
 jh_save *selected_save[MAX_CLIENTS];
@@ -55,6 +56,12 @@ void gsc_saveload_save(int id) //saveload_save(origin, angles, groundentnum)
 	}
 	else
 		newsave->groundentity = NULL;
+	if(!stackGetParamInt(3, &(newsave->nadejumps)))
+	{
+		printf("Illegal argument[3] for saveload_save\n");
+		stackPushInt(3);
+		return;
+	}
 	stackPushInt(0);
 }
 
@@ -127,4 +134,15 @@ void gsc_saveload_getgroundentity(int id)
 		stackPushEntity(selected_save[id]->groundentity);
 	else
 		stackPushUndefined();
+}
+
+void gsc_saveload_getnadejumps(int id)
+{
+	if(selected_save[id] == NULL)
+	{
+		printf("No save selected for getnadejumps\n");
+		stackPushUndefined();
+		return;
+	}
+	stackPushInt(selected_save[id]->nadejumps);
 }

@@ -4,6 +4,7 @@
 {"saveload_getorigin", gsc_saveload_getorigin, 0},
 {"saveload_getangles", gsc_saveload_getangles, 0},
 {"saveload_getgroundentity", gsc_saveload_getgroundentity, 0},
+{"saveload_getnadejumps", gsc_saveload_getnadejumps, 0},
 
 {"getgroundentity", gsc_getgroundentity, 0},
 

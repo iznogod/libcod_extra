@@ -11,5 +11,6 @@ void gsc_saveload_selectsave(int id);
 void gsc_saveload_getorigin(int id);
 void gsc_saveload_getangles(int id);
 void gsc_saveload_getgroundentity(int id);
+void gsc_saveload_getnadejumps(int id);
 
 #endif
